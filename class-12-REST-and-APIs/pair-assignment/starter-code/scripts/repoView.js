@@ -11,6 +11,7 @@
 
   // TODO: How do you want to render a single repo as html? Return your filled in HTML template.
   var render = function(repo) {
+      return repo.html_url;
 
   };
 
@@ -21,7 +22,7 @@
     // The jQuery `append` method lets us append an entire array of HTML elements at once,
     // So we can use a little FP to transform our data-set into DOM nodes:
     $('#about ul').append(
-      repos.with('forks_count').map(render)
+      repos.with('html_url').map(render)
     );
   };
 
